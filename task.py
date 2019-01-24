@@ -7,6 +7,7 @@ from collections import Counter
 '''
 url = 'http://web.cs.ucla.edu/classes/fall18/cs131/syllabus.html'
 
+Type the URL to be tested.
 '''
 
 url = "'" + sys.argv[1] + "'"
@@ -26,7 +27,6 @@ def get_links():
   for link in t.html.absolute_links:
     links.append(urlparse(link).netloc)
 
-  print(links)
   unique = Counter(links)
 
   return (unique[my_netloc])
